@@ -9,6 +9,6 @@ import hu.kukutyin.dummy.service.app.dao.dto.ConstantsDto;
 
 @Repository
 @Mapper
-public interface ConstantsMapper {
+public interface ConstantsMapper extends MyBatisMapper {
     ConstantsDto getRow(@Param("groupId") String groupId, @Param("groupIdKey") String groupIdKey);
 }
