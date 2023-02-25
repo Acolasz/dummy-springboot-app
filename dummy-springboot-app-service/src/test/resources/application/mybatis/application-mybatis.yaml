@@ -1,0 +1,22 @@
+#Database connection
+spring:
+  banner:
+    location: classpath:/application/mybatis/banner-mybatis.txt
+
+  datasource:
+    url: jdbc:h2:mem:test_db
+    username:
+    password:
+    driverClassName: org.h2.Driver
+    initialize: true
+
+  sql:
+    init:
+      schema-locations: classpath:/application/mybatis/schema.sql
+      data-locations: classpath:/application/mybatis/data.sql
+
+
+#Hibernate configuration
+  jpa:
+    hibernate:
+      ddl-auto: none

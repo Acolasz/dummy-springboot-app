@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="hu.kukutyin.dummy.service.app.dao.mapper.ConstantsMapper">
+	<resultMap id="constantsResultMap" type="hu.kukutyin.dummy.service.app.dao.dto.ConstantsDto">
+		<result column="id" property="id"/>
+		<result column="group_id" property="groupId"/>
+		<result column="group_id_key" property="groupIdKey"/>
+		<result column="group_id_value" property="groupIdValue"/>
+		<result column="description" property="description"/>
+	</resultMap>
+
+	<select id="getRow" resultMap="constantsResultMap">
+		<![CDATA[
+
+            SELECT
+                   con.id                    AS "id"
+                  ,con.group_id              AS "group_id"
+                  ,con.group_id_key          AS "group_id_key"
+                  ,con.group_id_value        AS "group_id_value"
+                  ,con.description           AS "description"
+             FROM constants con
+            WHERE 1=1
+              AND con.group_id LIKE #{groupId}
+              AND con.group_id_key LIKE #{groupIdKey}
+
+		]]>
+    </select>
+</mapper>

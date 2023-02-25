@@ -1,0 +1,3 @@
+spring:
+  banner:
+    location: classpath:/application/web-mock/banner-web-mock.txt
