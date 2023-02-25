@@ -1,4 +1,4 @@
-package hu.kukutyin.own.app;
+package hu.kukutyin.dummy.service.app;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -7,12 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 
-import hu.kukutyin.own.app.entity.ConstantsEntity;
+import hu.kukutyin.dummy.service.app.entity.ConstantsEntity;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DataJpaTest
-class OwnAppWithTestingApplicationJPATests {
+class DummySpringbootAppJPATests {
     private static final Long CONSTANTS_ENTITY_ID_1 = 1L;
 
     @Autowired

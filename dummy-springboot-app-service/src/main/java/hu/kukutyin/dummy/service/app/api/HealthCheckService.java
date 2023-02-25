@@ -1,4 +1,4 @@
-package hu.kukutyin.own.app.api;
+package hu.kukutyin.dummy.service.app.api;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;

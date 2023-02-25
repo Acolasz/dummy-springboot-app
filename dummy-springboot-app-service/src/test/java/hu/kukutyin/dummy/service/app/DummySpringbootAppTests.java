@@ -1,21 +1,17 @@
-package hu.kukutyin.own.app;
+package hu.kukutyin.dummy.service.app;
 
 import org.junit.jupiter.api.Test;
-import org.junit.platform.suite.api.IncludeTags;
-import org.junit.platform.suite.api.SelectClasses;
-import org.junit.platform.suite.api.Suite;
-import org.junit.platform.suite.api.SuiteDisplayName;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import hu.kukutyin.own.app.api.GreetingService;
-import hu.kukutyin.own.app.api.HealthCheckService;
+import hu.kukutyin.dummy.service.app.api.GreetingService;
+import hu.kukutyin.dummy.service.app.api.HealthCheckService;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
-class OwnAppWithTestingApplicationTests {
+class DummySpringbootAppTests {
 
     @Autowired
     private HealthCheckService healthCheckService;

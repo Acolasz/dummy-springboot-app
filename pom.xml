@@ -3,14 +3,14 @@
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>hu.kukutyin.test</groupId>
-	<artifactId>own-app-with-testing</artifactId>
+	<groupId>hu.kukutyin.dummy.springboot</groupId>
+	<artifactId>dummy-springboot-app</artifactId>
 	<version>${project.version}</version>
 	<packaging>pom</packaging>
 
 	<description>Demo project for Spring Boot</description>
 	<modules>
-		<module>own-app-with-testing-service</module>
+		<module>dummy-springboot-app-service</module>
 	</modules>
 
 	<properties>
@@ -21,6 +21,7 @@
 		<maven.compiler.target>${java.version}</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring.boot.parent.version>2.7.8</spring.boot.parent.version>
+		<spring.boot.mybatis.version>2.2.2</spring.boot.mybatis.version>
 		<maven.surefire.plugin.version>2.22.2</maven.surefire.plugin.version>
 	</properties>
 
@@ -41,15 +42,26 @@
 				<scope>import</scope>
 			</dependency>
 			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>1.18.22</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mybatis.spring.boot</groupId>
+				<artifactId>mybatis-spring-boot-starter</artifactId>
+				<version>${spring.boot.mybatis.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mybatis.spring.boot</groupId>
+				<artifactId>mybatis-spring-boot-starter-test</artifactId>
+				<version>${spring.boot.mybatis.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
 				<groupId>org.junit.platform</groupId>
 				<artifactId>junit-platform-suite-engine</artifactId>
 				<version>1.8.2</version>
 				<scope>test</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.projectlombok</groupId>
-				<artifactId>lombok</artifactId>
-				<version>1.18.22</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

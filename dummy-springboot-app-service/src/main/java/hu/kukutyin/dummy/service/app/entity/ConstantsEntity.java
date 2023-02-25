@@ -1,4 +1,4 @@
-package hu.kukutyin.own.app.entity;
+package hu.kukutyin.dummy.service.app.entity;
 
 import java.io.Serializable;
 
@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import hu.kukutyin.own.app.valueset.EntitiesConstants;
+import hu.kukutyin.dummy.service.app.valueset.EntitiesConstants;
 
 @Entity
 @Table(name = EntitiesConstants.CONSTANTS_TABLE)

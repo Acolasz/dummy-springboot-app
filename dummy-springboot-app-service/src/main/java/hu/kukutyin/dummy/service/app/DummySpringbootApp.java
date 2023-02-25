@@ -1,13 +1,13 @@
-package hu.kukutyin.own.app;
+package hu.kukutyin.dummy.service.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class OwnAppWithTestingApplication {
+public class DummySpringbootApp {
 
 	public static void main(String[] args) {
-		SpringApplication.run(OwnAppWithTestingApplication.class, args);
+		SpringApplication.run(DummySpringbootApp.class, args);
 	}
 
 }

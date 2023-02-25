@@ -1,0 +1,16 @@
+#Database connection
+#spring:
+#  datasource:
+#    url: jdbc:h2:mem:test_db
+#    username:
+#    password:
+#    driverClassName: org.h2.Driver
+#    initialize: true
+#    schema: schema.sql
+#    data: schema.sql
+
+
+#Hibernate configuration
+#  jpa:
+#    hibernate:
+#      ddl-auto: none

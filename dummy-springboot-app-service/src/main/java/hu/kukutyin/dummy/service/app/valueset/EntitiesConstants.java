@@ -1,4 +1,4 @@
-package hu.kukutyin.own.app.valueset;
+package hu.kukutyin.dummy.service.app.valueset;
 
 public class EntitiesConstants {
 

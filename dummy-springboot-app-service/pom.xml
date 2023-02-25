@@ -5,12 +5,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>hu.kukutyin.test</groupId>
-		<artifactId>own-app-with-testing</artifactId>
+		<groupId>hu.kukutyin.dummy.springboot</groupId>
+		<artifactId>dummy-springboot-app</artifactId>
 		<version>${project.version}</version>
 	</parent>
 
-	<artifactId>own-app-with-testing-service</artifactId>
+	<artifactId>dummy-springboot-app-service</artifactId>
 
 	<properties>
 	</properties>
@@ -36,6 +36,15 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter-test</artifactId>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

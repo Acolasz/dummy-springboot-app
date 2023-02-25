@@ -1,4 +1,4 @@
-package hu.kukutyin.own.app;
+package hu.kukutyin.dummy.service.app;
 
 import org.junit.jupiter.api.Test;
 
@@ -13,7 +13,8 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.web.servlet.MockMvc;
 
 @WebMvcTest
-class OwnAppWithTestingApplicationMockTests {
+class DummySpringbootAppWebMockTests {
+
     @Autowired
     private MockMvc mockMvc;
 
