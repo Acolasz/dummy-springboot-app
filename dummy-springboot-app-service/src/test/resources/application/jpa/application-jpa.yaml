@@ -1,3 +1,0 @@
-spring:
-  banner:
-    location: classpath:/application/jpa/banner-jpa.txt

@@ -1,0 +1,8 @@
+spring:
+  banner:
+    location: classpath:/application/jpa/banner-jpa.txt
+
+logging:
+  level:
+    root: WARN
+    hu.kukutyin.dummy.service.app.entity: TRACE

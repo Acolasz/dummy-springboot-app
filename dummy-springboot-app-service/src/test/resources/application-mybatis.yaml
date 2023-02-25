@@ -15,8 +15,15 @@ spring:
       schema-locations: classpath:/application/mybatis/schema.sql
       data-locations: classpath:/application/mybatis/data.sql
 
-
 #Hibernate configuration
   jpa:
     hibernate:
       ddl-auto: none
+
+logging:
+  level:
+    root: WARN
+    hu.kukutyin.dummy.service.app.dao: TRACE
+
+mybatis:
+  mapper-locations: classpath*:/mappers/*.xml

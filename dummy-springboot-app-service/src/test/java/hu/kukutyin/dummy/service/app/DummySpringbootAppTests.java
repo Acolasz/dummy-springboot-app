@@ -12,7 +12,6 @@ import hu.kukutyin.dummy.service.app.api.HealthCheckService;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
-@TestPropertySource(locations = "/application/default/application-default.yaml")
 class DummySpringbootAppTests {
 
     @Autowired

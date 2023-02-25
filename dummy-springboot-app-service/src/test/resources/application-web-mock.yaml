@@ -1,3 +1,8 @@
 spring:
   banner:
     location: classpath:/application/web-mock/banner-web-mock.txt
+
+logging:
+  level:
+    root: WARN
+    hu.kukutyin.dummy.service.app.api: TRACE
