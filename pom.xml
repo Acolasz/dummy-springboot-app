@@ -11,6 +11,7 @@
 	<description>Demo project for Spring Boot</description>
 	<modules>
 		<module>dummy-springboot-app-service</module>
+		<module>dummy-springboot-app-docker</module>
 	</modules>
 
 	<properties>
@@ -20,9 +21,15 @@
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
 		<spring.boot.parent.version>2.7.8</spring.boot.parent.version>
 		<spring.boot.mybatis.version>2.2.2</spring.boot.mybatis.version>
+		<postgresql.version>42.5.0</postgresql.version>
+
 		<maven.surefire.plugin.version>2.22.2</maven.surefire.plugin.version>
+
+		<install-apps-folder>install/apps</install-apps-folder>
+		<output-folder>${project.basedir}/${install-apps-folder}</output-folder>
 	</properties>
 
 	<dependencyManagement>
@@ -45,6 +52,11 @@
 				<groupId>org.projectlombok</groupId>
 				<artifactId>lombok</artifactId>
 				<version>1.18.22</version>
+			</dependency>
+			<dependency>
+				<groupId>org.postgresql</groupId>
+				<artifactId>postgresql</artifactId>
+				<version>${postgresql.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.mybatis.spring.boot</groupId>
