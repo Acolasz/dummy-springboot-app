@@ -45,12 +45,12 @@ public class ConstantsEntity implements Serializable {
     /**
      * Key
      */
-    private String constKey;
+    private String groupIdKey;
 
     /**
      * Value of key
      */
-    private String constValue;
+    private String groupIdValue;
 
     /**
      * Description od key rows
