@@ -16,6 +16,18 @@ import static hu.kukutyin.dummy.service.app.valueset.ConstantsTest.ID_2_ENTITY_I
 import static hu.kukutyin.dummy.service.app.valueset.ConstantsTest.ID_2_GROUP_ID;
 import static hu.kukutyin.dummy.service.app.valueset.ConstantsTest.ID_2_GROUP_ID_KEY;
 import static hu.kukutyin.dummy.service.app.valueset.ConstantsTest.ID_2_GROUP_ID_VALUE;
+import static hu.kukutyin.dummy.service.app.valueset.ConstantsTest.ID_3_ENTITY_ID;
+import static hu.kukutyin.dummy.service.app.valueset.ConstantsTest.ID_3_GROUP_ID;
+import static hu.kukutyin.dummy.service.app.valueset.ConstantsTest.ID_3_GROUP_ID_KEY;
+import static hu.kukutyin.dummy.service.app.valueset.ConstantsTest.ID_3_GROUP_ID_VALUE;
+import static hu.kukutyin.dummy.service.app.valueset.ConstantsTest.ID_4_ENTITY_ID;
+import static hu.kukutyin.dummy.service.app.valueset.ConstantsTest.ID_4_GROUP_ID;
+import static hu.kukutyin.dummy.service.app.valueset.ConstantsTest.ID_4_GROUP_ID_KEY;
+import static hu.kukutyin.dummy.service.app.valueset.ConstantsTest.ID_4_GROUP_ID_VALUE;
+import static hu.kukutyin.dummy.service.app.valueset.ConstantsTest.ID_5_ENTITY_ID;
+import static hu.kukutyin.dummy.service.app.valueset.ConstantsTest.ID_5_GROUP_ID;
+import static hu.kukutyin.dummy.service.app.valueset.ConstantsTest.ID_5_GROUP_ID_KEY;
+import static hu.kukutyin.dummy.service.app.valueset.ConstantsTest.ID_5_GROUP_ID_VALUE;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
@@ -40,5 +52,26 @@ public class ConstantsMapperTest {
         ConstantsDto constants = constantsMapper.getRow(ID_2_GROUP_ID, ID_2_GROUP_ID_KEY);
         assertThat(constants.getId()).isEqualTo(ID_2_ENTITY_ID);
         assertThat(constants.getGroupIdValue()).isEqualTo(ID_2_GROUP_ID_VALUE);
+    }
+
+    @Test
+    void getRowId3Test() {
+        ConstantsDto constants = constantsMapper.getRow(ID_3_GROUP_ID, ID_3_GROUP_ID_KEY);
+        assertThat(constants.getId()).isEqualTo(ID_3_ENTITY_ID);
+        assertThat(constants.getGroupIdValue()).isEqualTo(ID_3_GROUP_ID_VALUE);
+    }
+
+    @Test
+    void getRowId4Test() {
+        ConstantsDto constants = constantsMapper.getRow(ID_4_GROUP_ID, ID_4_GROUP_ID_KEY);
+        assertThat(constants.getId()).isEqualTo(ID_4_ENTITY_ID);
+        assertThat(constants.getGroupIdValue()).isEqualTo(ID_4_GROUP_ID_VALUE);
+    }
+
+    @Test
+    void getRowId5Test() {
+        ConstantsDto constants = constantsMapper.getRow(ID_5_GROUP_ID, ID_5_GROUP_ID_KEY);
+        assertThat(constants.getId()).isEqualTo(ID_5_ENTITY_ID);
+        assertThat(constants.getGroupIdValue()).isEqualTo(ID_5_GROUP_ID_VALUE);
     }
 }

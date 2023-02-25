@@ -15,4 +15,19 @@ public class ConstantsTest {
     public static final String ID_2_GROUP_ID_KEY = "fb_url";
     public static final String ID_2_GROUP_ID_VALUE = "https://graph.facebook.com/v13.0";
     public static final String ID_2_GROUP_ID_DESCRIPTION = "Facebook v13 graph URL.";
+    public static final Long ID_3_ENTITY_ID = 3L;
+    public static final String ID_3_GROUP_ID = "send";
+    public static final String ID_3_GROUP_ID_KEY = "path_messages_me";
+    public static final String ID_3_GROUP_ID_VALUE = "/me/messages";
+    public static final String ID_3_GROUP_ID_DESCRIPTION = "Facebook v13 graph URL path.";
+    public static final Long ID_4_ENTITY_ID = 4L;
+    public static final String ID_4_GROUP_ID = "send";
+    public static final String ID_4_GROUP_ID_KEY = "query_key_access_token";
+    public static final String ID_4_GROUP_ID_VALUE = "?access_token=";
+    public static final String ID_4_GROUP_ID_DESCRIPTION = "Facebook v13 graph URL query key.";
+    public static final Long ID_5_ENTITY_ID = 5L;
+    public static final String ID_5_GROUP_ID = "send";
+    public static final String ID_5_GROUP_ID_KEY = "query_value_access_token";
+    public static final String ID_5_GROUP_ID_VALUE = "EAAKyEpSTiY4wZDZD";
+    public static final String ID_5_GROUP_ID_DESCRIPTION = "Access to Facebook v13 graph URL.";
 }
