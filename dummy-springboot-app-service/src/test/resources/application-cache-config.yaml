@@ -1,0 +1,8 @@
+spring:
+  banner:
+    location: classpath:/application/cache-config/banner-cache-config.txt
+
+logging:
+  level:
+    root: WARN
+    hu.kukutyin.dummy.service.app.config: TRACE

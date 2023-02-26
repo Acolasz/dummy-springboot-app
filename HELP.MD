@@ -13,6 +13,8 @@ mvn --projects dummy-springboot-app-service --also-make clean install -Dtest="Du
 mvn --projects dummy-springboot-app-service --also-make clean install -Dtest="DummySpringbootAppTests" -DfailIfNoTests=false
 mvn --projects dummy-springboot-app-service --also-make clean install -Dtest="DummySpringbootAppWebMockTests" -DfailIfNoTests=false
 mvn --projects dummy-springboot-app-service --also-make clean install -Dtest="ConstantsMapperTest" -DfailIfNoTests=false
+mvn --projects dummy-springboot-app-service --also-make clean install -Dtest="CacheConfigTest" -DfailIfNoTests=false
+mvn --projects dummy-springboot-app-service --also-make clean install -Dtest="CachingDaoTest" -DfailIfNoTests=false
 ```
 
 # Running application in local

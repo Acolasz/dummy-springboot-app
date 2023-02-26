@@ -1,0 +1,18 @@
+     ,gggg,                                                                  ,gggggggggggg,                         ,ggg,         gg                              ,ggggggggggggggg
+   ,88"""Y8b,                       ,dPYb,                                  dP"""88""""""Y8b,                      dP""Y8a        88                        I8   dP""""""88"""""""                I8
+  d8"     `Y8                       IP'`Yb                                  Yb,  88       `8b,                     Yb, `88        88                        I8   Yb,_    88                       I8
+ d8'   8b  d8                       I8  8I      gg                           `"  88        `8b                      `"  88        88                 gg  88888888 `""    88                    88888888
+,8I    "Y88P'                       I8  8'      ""                               88         Y8                          88        88                 ""     I8           88                       I8
+I8'             ,gggg,gg    ,gggg,  I8 dPgg,    gg    ,ggg,,ggg,     ,gggg,gg    88         d8   ,gggg,gg    ,ggggg,    88        88   ,ggg,,ggg,    gg     I8           88   ,ggg,     ,g,       I8
+d8             dP"  "Y8I   dP"  "Yb I8dP" "8I   88   ,8" "8P" "8,   dP"  "Y8I    88        ,8P  dP"  "Y8I   dP"  "Y8ggg 88        88  ,8" "8P" "8,   88     I8           88  i8" "8i   ,8'8,      I8
+Y8,           i8'    ,8I  i8'       I8P    I8   88   I8   8I   8I  i8'    ,8I    88       ,8P' i8'    ,8I  i8'    ,8I   88        88  I8   8I   8I   88    ,I8,    gg,   88  I8, ,8I  ,8'  Yb    ,I8,
+`Yba,,_____, ,d8,   ,d8b,,d8,_    _,d8     I8,_,88,_,dP   8I   Yb,,d8,   ,d8I    88______,dP' ,d8,   ,d8b,,d8,   ,d8'   Y8b,____,d88,,dP   8I   Yb,_,88,_ ,d88b,    "Yb,,8P  `YbadP' ,8'_   8)  ,d88b,
+  `"Y8888888 P"Y8888P"`Y8P""Y8888PP88P     `Y88P""Y88P'   8I   `Y8P"Y8888P"888  888888888P"   P"Y8888P"`Y8P"Y8888P"      "Y888888P"Y88P'   8I   `Y88P""Y888P""Y88     "Y8P' 888P"Y888P' "YY8P8P88P""Y88
+                                                                         ,d8I'
+                                                                       ,dP'8I
+                                                                      ,8"  8I
+                                                                      I8   8I
+                                                                      `8, ,8I
+                                                                       `Y8P"
+${application.title} ${application.version}
+Powered by Spring Boot ${spring-boot.version}
