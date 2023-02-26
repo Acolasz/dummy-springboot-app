@@ -2,6 +2,26 @@ spring:
   banner:
     location: classpath:/application/web-mock/banner-web-mock.txt
 
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+
+  datasource:
+    url: jdbc:h2:mem:test_db
+    username:
+    password:
+    driverClassName: org.h2.Driver
+    initialize: true
+
+  sql:
+    init:
+      schema-locations: classpath:/application/web-mock/schema.sql
+      data-locations: classpath:/application/web-mock/data.sql
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+
 logging:
   level:
     root: WARN

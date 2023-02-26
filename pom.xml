@@ -37,7 +37,7 @@
 		<openapi.yaml.location>
 			dummy-springboot-app-interface/src/main/resources/dummy-service-path.yaml
 		</openapi.yaml.location>
-		<openapi.base.package>hu.kukutyin.dummy.service</openapi.base.package>
+		<openapi.base.package>hu.kukutyin.dummy.service.app</openapi.base.package>
 
 		<install-apps-folder>install/apps</install-apps-folder>
 		<output-folder>${project.basedir}/${install-apps-folder}</output-folder>

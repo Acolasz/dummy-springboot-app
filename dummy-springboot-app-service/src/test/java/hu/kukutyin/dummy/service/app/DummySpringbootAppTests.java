@@ -5,8 +5,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import hu.kukutyin.dummy.service.api.ConstantsServiceApiDelegate;
-import hu.kukutyin.dummy.service.api.HealthCheckServiceApiDelegate;
+import hu.kukutyin.dummy.service.app.api.ConstantsServiceApiDelegate;
+import hu.kukutyin.dummy.service.app.api.HealthCheckServiceApiDelegate;
 import hu.kukutyin.dummy.service.app.dao.ConstantsDao;
 import hu.kukutyin.dummy.service.app.dao.mapper.ConstantsMapper;
 

@@ -11,9 +11,15 @@ import org.springframework.boot.info.BuildProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * Fixed org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NullPointerException
+ *
+ * @see "https://github.com/springfox/springfox/issues/3462#issuecomment-978707909"
+ * @see "https://github.com/springfox/springfox/issues/3462#issuecomment-1076552144"
+ */
 @Configuration
 public class SwaggerConfig {
-        private static final String BASE_PACKAGE_CONTROLLER = "hu.kukutyin.dummy.service";
+    private static final String BASE_PACKAGE_CONTROLLER = "hu.kukutyin.dummy.service";
 
     private final BuildProperties buildProperties;
 

@@ -3,17 +3,12 @@ package hu.kukutyin.dummy.service.app.api;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
-import hu.kukutyin.dummy.service.api.ConstantsServiceApi;
-import hu.kukutyin.dummy.service.api.ConstantsServiceApiDelegate;
 import hu.kukutyin.dummy.service.app.dao.ConstantsDao;
 import hu.kukutyin.dummy.service.app.dao.exception.ConstantsDaoException;
-import hu.kukutyin.dummy.service.domain.ConstantsRequest;
-import hu.kukutyin.dummy.service.domain.ConstantsResponse;
+import hu.kukutyin.dummy.service.app.domain.ConstantsResponse;
 
 @Slf4j
 @Service
@@ -31,7 +26,8 @@ public class ConstantsServiceApiDelegateImpl implements ConstantsServiceApiDeleg
     /**
      * GET /dummy
      *
-     * @param constantsRequest (optional)
+     * @param groupId    Constants: groupId (required)
+     * @param groupIdKey Constants: groupIdKey (required)
      * @return Success. (status code 200)
      * or Invalid (status code 403)
      * or Invalid (status code 404)
@@ -39,15 +35,15 @@ public class ConstantsServiceApiDelegateImpl implements ConstantsServiceApiDeleg
      * @see ConstantsServiceApi#constantsService
      */
     @Override
-    public ResponseEntity<ConstantsResponse> constantsService(ConstantsRequest constantsRequest) {
+    public ResponseEntity<ConstantsResponse> constantsService(
+            String groupId,
+            String groupIdKey
+    ) {
         log.info("constantsService: {}", this.getClass());
-        ConstantsResponse constantsResponse = new ConstantsResponse();
         try {
-            constantsResponse.setGroupIdValue(constantsDao.completeFbUrl());
-            return ResponseEntity.ok().body(constantsResponse);
+            return ResponseEntity.ok(new ConstantsResponse().groupIdValue(constantsDao.completeFbUrl()));
         } catch (ConstantsDaoException e) {
-            log.error(e.getMessage(), e);
+            return ResponseEntity.notFound().build();
         }
-        return ResponseEntity.notFound().build();
     }
 }

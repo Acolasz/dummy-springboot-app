@@ -3,11 +3,19 @@ dummy:
     tags:
       - 'ConstantsService'
     operationId: constantsService
-    requestBody:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ConstantsRequest'
+    parameters:
+      - in: query
+        name: 'groupId'
+        description: 'Constants: groupId'
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: 'groupIdKey'
+        description: 'Constants: groupIdKey'
+        required: true
+        schema:
+          type: string
     responses:
       200:
         description: 'Success.'
