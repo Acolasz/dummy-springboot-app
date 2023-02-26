@@ -1,0 +1,43 @@
+dummy:
+  get:
+    tags:
+      - 'ConstantsService'
+    operationId: constantsService
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ConstantsRequest'
+    responses:
+      200:
+        description: 'Success.'
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConstantsResponse'
+      403:
+        description: 'Invalid'
+      404:
+        description: 'Invalid'
+      500:
+        description: 'Internal server error.'
+
+components:
+  schemas:
+    ConstantsRequest:
+      description: 'ConstantsRequest'
+      type: object
+      properties:
+        groupId:
+          type: string
+          description: 'Constants: groupId'
+        groupIdKey:
+          type: string
+          description: 'Constants: groupIdKey'
+    ConstantsResponse:
+      description: 'ConstantsResponse'
+      type: object
+      properties:
+        groupIdValue:
+          type: string
+          description: 'Constants: groupIdValue'

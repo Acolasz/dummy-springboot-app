@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import hu.kukutyin.dummy.service.api.ConstantsServiceApiDelegate;
+import hu.kukutyin.dummy.service.api.HealthCheckServiceApiDelegate;
 import hu.kukutyin.dummy.service.app.dao.ConstantsDao;
 import hu.kukutyin.dummy.service.app.dao.mapper.ConstantsMapper;
 
@@ -13,11 +15,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest
 class DummySpringbootAppTests {
 
-//    @Autowired
-//    private HealthCheckService healthCheckService;
-//
-//    @Autowired
-//    private GreetingService greetingService;
+    @Autowired
+    private HealthCheckServiceApiDelegate healthCheckServiceApiDelegate;
+
+    @Autowired
+    private ConstantsServiceApiDelegate constantsServiceApiDelegate;
 
     @Autowired
     private ConstantsDao constantsDao;
@@ -27,8 +29,8 @@ class DummySpringbootAppTests {
 
     @Test
     void apiContextLoads() {
-//        assertThat(healthCheckService).isNotNull();
-//        assertThat(greetingService).isNotNull();
+        assertThat(healthCheckServiceApiDelegate).isNotNull();
+        assertThat(constantsServiceApiDelegate).isNotNull();
     }
 
     @Test

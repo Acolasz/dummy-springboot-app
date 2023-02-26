@@ -17,6 +17,14 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>hu.kukutyin.dummy.springboot</groupId>
+			<artifactId>dummy-springboot-app-interface</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
@@ -64,6 +72,46 @@
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.openapitools</groupId>
+				<artifactId>openapi-generator-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<skipIfSpecIsUnchanged>false</skipIfSpecIsUnchanged>
+							<inputSpec>${openapi.yaml.location}</inputSpec>
+							<output>${project.build.directory}/generated-sources/openapi</output>
+							<generatorName>spring</generatorName>
+							<library>spring-boot</library>
+							<apiPackage>${openapi.base.package}.api</apiPackage>
+							<modelPackage>${openapi.base.package}.domain</modelPackage>
+							<generateApis>true</generateApis>
+							<generateApiDocumentation>false</generateApiDocumentation>
+							<generateApiTests>false</generateApiTests>
+							<generateModels>false</generateModels>
+							<generateModelDocumentation>false</generateModelDocumentation>
+							<generateModelTests>false</generateModelTests>
+							<generateSupportingFiles>false</generateSupportingFiles>
+							<configHelp>false</configHelp>
+							<configOptions>
+								<sourceFolder>src/main/java</sourceFolder>
+								<java8>false</java8>
+								<dateLibrary>java8-localdatetimee</dateLibrary>
+								<useTags>true</useTags>
+								<configPackage>${openapi.base.package}.appconfig</configPackage>
+								<basePackage>base.${openapi.base.package}</basePackage>
+								<interfaceOnly>false</interfaceOnly>
+								<delegatePattern>true</delegatePattern>
+								<implicitHeaders>false</implicitHeaders>
+								<serializableModel>true</serializableModel>
+							</configOptions>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>

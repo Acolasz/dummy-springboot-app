@@ -1,0 +1,9 @@
+healthcheck:
+  get:
+    tags:
+      - 'HealthCheckService'
+    operationId: healthCheck
+    description: 'Health Check'
+    responses:
+      200:
+        description: 'Success'

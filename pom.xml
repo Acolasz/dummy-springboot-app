@@ -12,11 +12,12 @@
 	<modules>
 		<module>dummy-springboot-app-service</module>
 		<module>dummy-springboot-app-docker</module>
+		<module>dummy-springboot-app-interface</module>
 	</modules>
 
 	<properties>
 		<build.number>SNAPSHOT</build.number>
-		<project.version>0.1.0-${build.number}</project.version>
+		<project.version>0.2.0-${build.number}</project.version>
 		<java.version>1.8</java.version>
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
@@ -25,8 +26,17 @@
 		<spring.boot.parent.version>2.7.8</spring.boot.parent.version>
 		<spring.boot.mybatis.version>2.2.2</spring.boot.mybatis.version>
 		<postgresql.version>42.5.0</postgresql.version>
+		<swagger.annotations.version>1.6.4</swagger.annotations.version>
+		<openapi.tools.jackson.databind.nullable.version>0.2.2</openapi.tools.jackson.databind.nullable.version>
+		<javax.validation.api.version>2.0.1.Final</javax.validation.api.version>
 
+		<maven.openapi.generator.plugin.version>5.3.1</maven.openapi.generator.plugin.version>
 		<maven.surefire.plugin.version>2.22.2</maven.surefire.plugin.version>
+
+		<openapi.yaml.location>
+			dummy-springboot-app-interface/src/main/resources/dummy-service-path.yaml
+		</openapi.yaml.location>
+		<openapi.base.package>hu.kukutyin.dummy.service</openapi.base.package>
 
 		<install-apps-folder>install/apps</install-apps-folder>
 		<output-folder>${project.basedir}/${install-apps-folder}</output-folder>
@@ -34,6 +44,27 @@
 
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>hu.kukutyin.dummy.springboot</groupId>
+				<artifactId>dummy-springboot-app-interface</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.swagger</groupId>
+				<artifactId>swagger-annotations</artifactId>
+				<version>${swagger.annotations.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.openapitools</groupId>
+				<artifactId>jackson-databind-nullable</artifactId>
+				<version>${openapi.tools.jackson.databind.nullable.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.validation</groupId>
+				<artifactId>validation-api</artifactId>
+				<version>${javax.validation.api.version}</version>
+				<scope>provided</scope>
+			</dependency>
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-parent</artifactId>
@@ -81,6 +112,11 @@
 	<build>
 		<pluginManagement>
 			<plugins>
+				<plugin>
+					<groupId>org.openapitools</groupId>
+					<artifactId>openapi-generator-maven-plugin</artifactId>
+					<version>${maven.openapi.generator.plugin.version}</version>
+				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-surefire-plugin</artifactId>

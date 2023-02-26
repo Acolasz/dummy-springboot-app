@@ -1,0 +1,11 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Dummy Service API
+  description: Dummy Service API v1
+
+paths:
+  /dummy:
+    $ref: './dummy-service-api.yaml#/dummy'
+  /healthcheck:
+    $ref: './dummy-healthcheck.yaml#/healthcheck'
