@@ -30,4 +30,7 @@ public class ConstantsTest {
     public static final String ID_5_GROUP_ID_KEY = "query_value_access_token";
     public static final String ID_5_GROUP_ID_VALUE = "EAAKyEpSTiY4wZDZD";
     public static final String ID_5_GROUP_ID_DESCRIPTION = "Access to Facebook v13 graph URL.";
+    public static final String CACHE_KEY_GET_ROW = "ConstantsDaoImpl_getVerifyToken_";
+    public static final String CACHE_KEY_VERIFY_TOKEN = "ConstantsDaoImpl_getVerifyToken_";
+    public static final String CACHE_KEY_FB_URL = "ConstantsDaoImpl_completeFbUrl_";
 }

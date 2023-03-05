@@ -29,7 +29,10 @@ public class ConstantsDaoImpl implements ConstantsDao {
         this.constantsMapper = constantsMapper;
     }
 
-    @Cacheable(value = FB_URL)
+    @Cacheable(
+            value = FB_URL
+            , keyGenerator="customKeyGenerator"
+    )
     @Override
     public String completeFbUrl() throws ConstantsDaoException {
         return this.getRow(GROUP_ID_SEND, FB_URL).getGroupIdValue() +
@@ -38,18 +41,16 @@ public class ConstantsDaoImpl implements ConstantsDao {
                 this.getRow(GROUP_ID_SEND, SEND_QUERY_VALUE_ACCESS_TOKEN).getGroupIdValue();
     }
 
-    @Cacheable(value = VERIFY_TOKEN)
+    @Cacheable(
+            value = VERIFY_TOKEN
+            , keyGenerator="customKeyGenerator"
+    )
     @Override
     public String getVerifyToken() throws ConstantsDaoException {
         return this.getRow(GROUP_ID_CALLBACK, VERIFY_TOKEN).getGroupIdValue();
     }
 
-    @Cacheable(
-            value = GET_ROW
-            , key = "#groupIdKey"
-    )
-    @Override
-    public ConstantsDto getRow(String groupId, String groupIdKey) throws ConstantsDaoException {
+    private ConstantsDto getRow(String groupId, String groupIdKey) throws ConstantsDaoException {
         log.info("Get row with \"{}\" and \"{}\" params.", groupId, groupIdKey);
         ConstantsDto constantsDto = constantsMapper.getRow(groupId, groupIdKey);
         if (constantsDto == null) {

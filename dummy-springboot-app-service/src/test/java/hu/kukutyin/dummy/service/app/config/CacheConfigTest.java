@@ -22,6 +22,6 @@ public class CacheConfigTest {
     @Test
     public void givenCacheManager() {
         assertThat(cacheManager.getCacheNames())
-                .containsOnly(VERIFY_TOKEN, FB_URL, GET_ROW);
+                .containsOnly(VERIFY_TOKEN, FB_URL);
     }
 }

@@ -5,9 +5,12 @@ import java.util.Arrays;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.concurrent.ConcurrentMapCache;
+import org.springframework.cache.interceptor.KeyGenerator;
 import org.springframework.cache.support.SimpleCacheManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import hu.kukutyin.dummy.service.app.config.custom.CustomKeyGenerator;
 
 import static hu.kukutyin.dummy.service.app.valueset.GeneralConstants.FB_URL;
 import static hu.kukutyin.dummy.service.app.valueset.GeneralConstants.GET_ROW;
@@ -23,10 +26,14 @@ public class CacheConfig {
         cacheManager.setCaches(
                 Arrays.asList(
                         new ConcurrentMapCache(FB_URL),
-                        new ConcurrentMapCache(VERIFY_TOKEN),
-                        new ConcurrentMapCache(GET_ROW)
+                        new ConcurrentMapCache(VERIFY_TOKEN)
                 )
         );
         return cacheManager;
+    }
+
+    @Bean("customKeyGenerator")
+    public KeyGenerator keyGenerator() {
+        return new CustomKeyGenerator();
     }
 }

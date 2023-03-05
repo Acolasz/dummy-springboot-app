@@ -7,6 +7,4 @@ public interface ConstantsDao {
     String completeFbUrl() throws ConstantsDaoException;
 
     String getVerifyToken() throws ConstantsDaoException;
-
-    ConstantsDto getRow(String groupId, String groupIdKey) throws ConstantsDaoException;
 }
