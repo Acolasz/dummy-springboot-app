@@ -54,7 +54,6 @@
 							<library>spring-boot</library>
 							<inputSpec>${openapi.yaml.location}</inputSpec>
 							<output>${project.build.directory}/generated-sources/openapi</output>
-							<generatorName>org.openapitools.codegen.languages.SpringCodegen</generatorName>
 							<apiPackage>${openapi.base.package}.api</apiPackage>
 							<modelPackage>${openapi.base.package}.domain</modelPackage>
 							<generateApis>false</generateApis>
