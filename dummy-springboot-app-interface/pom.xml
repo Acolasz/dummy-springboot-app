@@ -68,7 +68,7 @@
 							<configOptions>
 								<sourceFolder>src/main/java</sourceFolder>
 								<java8>false</java8>
-								<dateLibrary>java8</dateLibrary>
+								<dateLibrary>java8-localdatetime</dateLibrary>
 								<useTags>true</useTags>
 								<configPackage>${openapi.base.package}.appconfig</configPackage>
 								<basePackage>${openapi.base.package}</basePackage>
