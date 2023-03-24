@@ -13,6 +13,7 @@
 		<module>dummy-springboot-app-service</module>
 		<module>dummy-springboot-app-docker</module>
 		<module>dummy-springboot-app-interface</module>
+		<module>dummy-springboot-app-client</module>
 	</modules>
 
 	<properties>
@@ -30,6 +31,7 @@
 		<swagger.annotations.version>1.6.4</swagger.annotations.version>
 		<openapi.tools.jackson.databind.nullable.version>0.2.2</openapi.tools.jackson.databind.nullable.version>
 		<javax.validation.api.version>2.0.1.Final</javax.validation.api.version>
+		<google.code.findbugs.jsr305.version>3.0.2</google.code.findbugs.jsr305.version>
 
 		<maven.clean.plugin.version>3.2.0</maven.clean.plugin.version>
 		<maven.dependency.plugin.version>3.3.0</maven.dependency.plugin.version>
@@ -75,6 +77,11 @@
 				<groupId>org.openapitools</groupId>
 				<artifactId>jackson-databind-nullable</artifactId>
 				<version>${openapi.tools.jackson.databind.nullable.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.google.code.findbugs</groupId>
+				<artifactId>jsr305</artifactId>
+				<version>${google.code.findbugs.jsr305.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>javax.validation</groupId>
