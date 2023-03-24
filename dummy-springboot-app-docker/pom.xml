@@ -50,13 +50,13 @@
 						<configuration>
 							<artifactItems>
 								<artifactItem>
-									<groupId>${parent.groupId}</groupId>
-									<artifactId>${parent.artifactId}-service</artifactId>
+									<groupId>${project.parent.groupId}</groupId>
+									<artifactId>${project.parent.artifactId}-service</artifactId>
 									<version>${project.version}</version>
 									<type>jar</type>
 									<outputDirectory>${output-folder}</outputDirectory>
 									<overWrite>true</overWrite>
-									<destFileName>${parent.artifactId}-service.jar</destFileName>
+									<destFileName>${project.parent.artifactId}-service.jar</destFileName>
 								</artifactItem>
 							</artifactItems>
 						</configuration>

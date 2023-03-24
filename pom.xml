@@ -31,6 +31,12 @@
 		<openapi.tools.jackson.databind.nullable.version>0.2.2</openapi.tools.jackson.databind.nullable.version>
 		<javax.validation.api.version>2.0.1.Final</javax.validation.api.version>
 
+		<maven.clean.plugin.version>3.2.0</maven.clean.plugin.version>
+		<maven.dependency.plugin.version>3.3.0</maven.dependency.plugin.version>
+		<maven.resources.plugin.version>3.3.0</maven.resources.plugin.version>
+		<maven.compiler.plugin.version>3.11.0</maven.compiler.plugin.version>
+		<maven.jar.plugin.version>3.3.0</maven.jar.plugin.version>
+		<maven.install.plugin.version>3.0.1</maven.install.plugin.version>
 		<maven.openapi.generator.plugin.version>5.3.1</maven.openapi.generator.plugin.version>
 		<maven.surefire.plugin.version>2.22.2</maven.surefire.plugin.version>
 
@@ -124,6 +130,36 @@
 		<pluginManagement>
 			<plugins>
 				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-clean-plugin</artifactId>
+					<version>${maven.clean.plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-dependency-plugin</artifactId>
+					<version>${maven.dependency.plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>${maven.resources.plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${maven.compiler.plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>${maven.jar.plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-install-plugin</artifactId>
+					<version>${maven.install.plugin.version}</version>
+				</plugin>
+				<plugin>
 					<groupId>org.openapitools</groupId>
 					<artifactId>openapi-generator-maven-plugin</artifactId>
 					<version>${maven.openapi.generator.plugin.version}</version>
@@ -141,5 +177,4 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-
 </project>
