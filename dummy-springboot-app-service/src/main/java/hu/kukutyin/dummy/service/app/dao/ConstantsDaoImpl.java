@@ -1,12 +1,10 @@
 package hu.kukutyin.dummy.service.app.dao;
 
-import lombok.extern.slf4j.Slf4j;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
-import hu.kukutyin.dummy.service.app.aop.logging.Log;
+import hu.kukutyin.dummy.service.app.aop.annotation.Log;
 import hu.kukutyin.dummy.service.app.dao.dto.ConstantsDto;
 import hu.kukutyin.dummy.service.app.dao.exception.ConstantsDaoException;
 import hu.kukutyin.dummy.service.app.dao.mapper.ConstantsMapper;

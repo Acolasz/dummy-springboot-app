@@ -1,4 +1,4 @@
-package hu.kukutyin.dummy.service.app.aop.logging;
+package hu.kukutyin.dummy.service.app.aop.bean;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -16,7 +16,7 @@ public class LoggingAspect {
 
     private String message;
 
-    @Pointcut("@annotation(Log)")
+    @Pointcut("@annotation(hu.kukutyin.dummy.service.app.aop.annotation.Log)")
     public void logPointcut() {
     }
 

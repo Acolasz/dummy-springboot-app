@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import hu.kukutyin.dummy.service.app.aop.logging.Log;
+import hu.kukutyin.dummy.service.app.aop.annotation.Log;
 import hu.kukutyin.dummy.service.app.dao.ConstantsDao;
 import hu.kukutyin.dummy.service.app.dao.exception.ConstantsDaoException;
 import hu.kukutyin.dummy.service.app.domain.ConstantsResponse;

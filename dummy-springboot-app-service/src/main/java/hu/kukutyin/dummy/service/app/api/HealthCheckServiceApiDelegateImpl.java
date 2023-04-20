@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import hu.kukutyin.dummy.service.app.aop.logging.Log;
+import hu.kukutyin.dummy.service.app.aop.annotation.Log;
 
 @Slf4j
 @Service

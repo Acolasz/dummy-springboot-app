@@ -1,4 +1,4 @@
-package hu.kukutyin.dummy.service.app.aop.logging;
+package hu.kukutyin.dummy.service.app.aop.annotation;
 
 
 import java.lang.annotation.ElementType;
