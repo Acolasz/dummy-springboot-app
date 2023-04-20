@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "63355b68-45ec-4374-afac-6a5ab7d02c9c",
+		"name": "dummy-spring-boot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "healthcheck",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/healthcheck",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"healthcheck"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "dummy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"groupId\": \"string\",\r\n  \"groupIdKey\": \"string\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/dummy?groupId=valami&groupIdKey=barmi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"dummy"
+					],
+					"query": [
+						{
+							"key": "groupId",
+							"value": "valami"
+						},
+						{
+							"key": "groupIdKey",
+							"value": "barmi"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
