@@ -1,0 +1,24 @@
+spring:
+  banner:
+    location: classpath:/application/aop-logging/banner-aop-logging.txt
+
+  datasource:
+    url: jdbc:h2:mem:test_db
+    username:
+    password:
+    driverClassName: org.h2.Driver
+    initialize: true
+
+  sql:
+    init:
+      schema-locations: classpath:/application/aop-logging/schema.sql
+      data-locations: classpath:/application/aop-logging/data.sql
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+logging:
+  level:
+    root: WARN
+    hu.kukutyin.dummy.service.app.aop.logging: TRACE
