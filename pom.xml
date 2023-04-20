@@ -19,7 +19,7 @@
 	<properties>
 		<build.number>SNAPSHOT</build.number>
 		<project.version>0.2.0-${build.number}</project.version>
-		<java.version>1.8</java.version>
+		<java.version>11</java.version>
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -31,7 +31,10 @@
 		<swagger.annotations.version>1.6.4</swagger.annotations.version>
 		<openapi.tools.jackson.databind.nullable.version>0.2.2</openapi.tools.jackson.databind.nullable.version>
 		<javax.validation.api.version>2.0.1.Final</javax.validation.api.version>
+		<javax.annotation.api.version>1.3.2</javax.annotation.api.version>
+		<projectlombok.lombok.version>1.18.22</projectlombok.lombok.version>
 		<google.code.findbugs.jsr305.version>3.0.2</google.code.findbugs.jsr305.version>
+		<junit.platform.engine.version>1.8.2</junit.platform.engine.version>
 
 		<maven.clean.plugin.version>3.2.0</maven.clean.plugin.version>
 		<maven.dependency.plugin.version>3.3.0</maven.dependency.plugin.version>
@@ -41,6 +44,12 @@
 		<maven.install.plugin.version>3.0.1</maven.install.plugin.version>
 		<maven.openapi.generator.plugin.version>5.3.1</maven.openapi.generator.plugin.version>
 		<maven.surefire.plugin.version>2.22.2</maven.surefire.plugin.version>
+		<maven.plugin.javadoc.version>3.3.1</maven.plugin.javadoc.version>
+		<maven.plugin.jacoco.version>0.8.8</maven.plugin.jacoco.version>
+		<maven.plugin.owasp.dependency.check.version>8.1.2</maven.plugin.owasp.dependency.check.version>
+		<maven.plugin.tidy.version>1.2.0</maven.plugin.tidy.version>
+		<skip.tools>true</skip.tools>
+		<skip.dep.check>true</skip.dep.check>
 
 		<openapi.yaml.location>
 			dummy-springboot-app-interface/src/main/resources/dummy-service-path.yaml
@@ -90,6 +99,11 @@
 				<scope>provided</scope>
 			</dependency>
 			<dependency>
+				<groupId>javax.annotation</groupId>
+				<artifactId>javax.annotation-api</artifactId>
+				<version>${javax.annotation.api.version}</version>
+			</dependency>
+			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-parent</artifactId>
 				<version>${spring.boot.parent.version}</version>
@@ -106,7 +120,7 @@
 			<dependency>
 				<groupId>org.projectlombok</groupId>
 				<artifactId>lombok</artifactId>
-				<version>1.18.22</version>
+				<version>${projectlombok.lombok.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.postgresql</groupId>
@@ -127,7 +141,7 @@
 			<dependency>
 				<groupId>org.junit.platform</groupId>
 				<artifactId>junit-platform-suite-engine</artifactId>
-				<version>1.8.2</version>
+				<version>${junit.platform.engine.version}</version>
 				<scope>test</scope>
 			</dependency>
 		</dependencies>
@@ -181,7 +195,122 @@
 					<artifactId>spring-boot-maven-plugin</artifactId>
 					<version>${spring.boot.parent.version}</version>
 				</plugin>
+				<plugin>
+					<groupId>org.jacoco</groupId>
+					<artifactId>jacoco-maven-plugin</artifactId>
+					<version>${maven.plugin.jacoco.version}</version>
+					<executions>
+						<execution>
+							<id>prepare-agent</id>
+							<goals>
+								<goal>prepare-agent</goal>
+							</goals>
+							<configuration>
+								<skip>${skip.tools}</skip>
+							</configuration>
+						</execution>
+						<execution>
+							<id>jacoco-report</id>
+							<phase>prepare-package</phase>
+							<goals>
+								<goal>report-aggregate</goal>
+							</goals>
+							<configuration>
+								<skip>${skip.tools}</skip>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>${maven.plugin.javadoc.version}</version>
+					<executions>
+						<execution>
+							<id>javadoc-jar</id>
+							<phase>package</phase>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+							<!--							<configuration>-->
+							<!--								<skip>${skip.tools}</skip>-->
+							<!--							</configuration>-->
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+					<groupId>org.owasp</groupId>
+					<artifactId>dependency-check-maven</artifactId>
+					<version>${maven.plugin.owasp.dependency.check.version}</version>
+					<executions>
+						<execution>
+							<id>dependency-check</id>
+							<goals>
+								<goal>aggregate</goal>
+							</goals>
+							<configuration>
+								<skip>${skip.dep.check}</skip>
+								<formats>
+									<format>HTML</format>
+									<format>XML</format>
+									<format>JSON</format>
+								</formats>
+								<failOnError>false</failOnError>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>tidy-maven-plugin</artifactId>
+					<version>${maven.plugin.tidy.version}</version>
+					<executions>
+						<execution>
+							<id>pom-validate</id>
+							<phase>validate</phase>
+							<goals>
+								<goal>pom</goal>
+							</goals>
+							<configuration>
+								<skip>${skip.tools}</skip>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
 			</plugins>
 		</pluginManagement>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.owasp</groupId>
+				<artifactId>dependency-check-maven</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>tidy-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
 	</build>
+
+	<profiles>
+		<profile>
+			<id>enableTools</id>
+			<properties>
+				<skip.tools>false</skip.tools>
+			</properties>
+		</profile>
+		<profile>
+			<id>enableDepCheck</id>
+			<properties>
+				<skip.dep.check>false</skip.dep.check>
+			</properties>
+		</profile>
+	</profiles>
 </project>
