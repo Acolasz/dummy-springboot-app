@@ -17,6 +17,8 @@ spring:
   jpa:
     hibernate:
       ddl-auto: none
+      open-in-view: false
+
 logging:
   level:
     root: WARN
