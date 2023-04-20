@@ -5,6 +5,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import hu.kukutyin.dummy.service.app.aop.logging.Log;
+
 @Slf4j
 @Service
 public class HealthCheckServiceApiDelegateImpl implements HealthCheckServiceApiDelegate {
@@ -16,9 +18,9 @@ public class HealthCheckServiceApiDelegateImpl implements HealthCheckServiceApiD
      * @return Success (status code 200)
      * @see HealthCheckServiceApi#healthCheck()
      */
+    @Log
     @Override
     public ResponseEntity<Void> healthCheck() {
-        log.info("healthCheck: {}", this.getClass());
         return ResponseEntity.ok().build();
     }
 }

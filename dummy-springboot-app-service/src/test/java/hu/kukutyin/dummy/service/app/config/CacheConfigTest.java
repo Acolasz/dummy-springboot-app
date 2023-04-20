@@ -8,7 +8,6 @@ import org.springframework.cache.CacheManager;
 import org.springframework.test.context.ActiveProfiles;
 
 import static hu.kukutyin.dummy.service.app.valueset.GeneralConstants.FB_URL;
-import static hu.kukutyin.dummy.service.app.valueset.GeneralConstants.GET_ROW;
 import static hu.kukutyin.dummy.service.app.valueset.GeneralConstants.VERIFY_TOKEN;
 import static org.assertj.core.api.Assertions.assertThat;
 

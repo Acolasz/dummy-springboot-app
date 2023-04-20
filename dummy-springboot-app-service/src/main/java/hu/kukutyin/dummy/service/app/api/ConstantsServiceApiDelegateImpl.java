@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import hu.kukutyin.dummy.service.app.aop.logging.Log;
 import hu.kukutyin.dummy.service.app.dao.ConstantsDao;
 import hu.kukutyin.dummy.service.app.dao.exception.ConstantsDaoException;
 import hu.kukutyin.dummy.service.app.domain.ConstantsResponse;
@@ -34,12 +35,12 @@ public class ConstantsServiceApiDelegateImpl implements ConstantsServiceApiDeleg
      * or Internal server error. (status code 500)
      * @see ConstantsServiceApi#constantsService
      */
+    @Log
     @Override
     public ResponseEntity<ConstantsResponse> constantsService(
             String groupId,
             String groupIdKey
     ) {
-        log.info("constantsService: {}", this.getClass());
         try {
             return ResponseEntity.ok(new ConstantsResponse().groupIdValue(constantsDao.completeFbUrl()));
         } catch (ConstantsDaoException e) {
