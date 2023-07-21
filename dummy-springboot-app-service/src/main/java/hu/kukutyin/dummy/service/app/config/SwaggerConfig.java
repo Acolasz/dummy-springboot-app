@@ -12,10 +12,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * Fixed org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NullPointerException
+ * Fixed {@link org.springframework.context.ApplicationContextException}: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is {@link java.lang.NullPointerException}
  *
- * @see "https://github.com/springfox/springfox/issues/3462#issuecomment-978707909"
- * @see "https://github.com/springfox/springfox/issues/3462#issuecomment-1076552144"
+ * @see <a href="https://github.com/springfox/springfox/issues/3462#issuecomment-978707909">issuecomment-978707909</a>
+ * @see <a href="https://github.com/springfox/springfox/issues/3462#issuecomment-1076552144">issuecomment-1076552144</a>
  */
 @Configuration
 public class SwaggerConfig {
